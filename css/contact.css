@@ -69,7 +69,7 @@ header {
 }
 
 .contact-banner {
-    background-image: url("/assets/aboutmebanner.JPEG");
+    background-image: url("../assets/aboutmebanner.JPEG");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

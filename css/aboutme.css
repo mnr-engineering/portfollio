@@ -71,7 +71,7 @@ header {
 
 /* ===== STICKY BACKGROUND BANNER ===== */
 .about-banner {
-    background-image: url("/assets/aboutmebanner.JPEG"); /* or a different image */
+    background-image: url("../assets/aboutmebanner.JPEG"); /* or a different image */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* This creates the sticky/parallax feel */
