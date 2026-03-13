@@ -184,3 +184,33 @@ header {
         background-attachment: scroll;
     }
 }
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-container {
+        justify-content: center;
+    }
+
+    .title a {
+        font-size: clamp(1.2rem, 6vw, 2rem);
+    }
+
+    .cv-container h1 {
+        font-size: clamp(1.5rem, 6vw, 3rem);
+    }
+
+    .btn {
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+        padding: 0.6em 1.2em;
+    }
+
+    .featured-projects h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+}
