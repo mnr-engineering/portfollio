@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Title | MNR Engineering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projecttemplate.css">
+</head>
+<body>
+
+<header>
+    <div class="header-left"></div>
+    <h1 class="title"><a href="/index.html">MNR Engineering</a></h1>
+    <div class="nav-container">
+        <a href="/aboutme.html">About Me</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/cv.html">CV</a>
+        <a href="/contact.html">Contact</a>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="project-hero">
+    <img src="/assets/uasrebuild.jpg" alt="Project image">
+    <div class="hero-text">
+        <h1>UAS Rebuild</h1>
+        <p>Led the rebuild of a UAS project, with primary responsibility for avionics and electronics integration.</p>
+    </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="project-section centered">
+    <h2>Overview</h2>
+    <p>I acted as Team Lead for a university UAS rebuild project, with responsibility for project coordination and systems integration. My role included defining and maintaining the project timeline, briefing team members, and organising and leading regular meetings. In addition, I was responsible for the aircraft electronics, ensuring all avionics and electrical systems were correctly integrated and operational.</p>
+</section>
+
+<!-- DESIGN SECTION -->
+<section class="project-split">
+    <div class="text">
+        <h2>Project Context</h2>
+        <p>The Aerospace Society at my university competes annually in the IMechE UAS Challenge. The previous year's aircraft suffered a structural failure during flight, resulting in a crash landing. As a result, the team was tasked with rebuilding the aircraft to improve reliability and gain practical experience. While several components were salvageable, critical structures such as the fuselage, spar connectors, and internal skeleton required refabrication, and the onboard electronics needed replacement and full recalibration.</p>
+    </div>
+    <div class="image">
+        <img src="project-assets/uasrebuild/dissasembled.jpg" alt="">
+    </div>
+</section>
+
+<!-- BUILD SECTION -->
+<section class="project-split reverse">
+    <div class="text">
+        <h2>My Role: Team Lead and Electronics Lead</h2>
+        <p>I acted as Project Team Lead, responsible for coordinating members, maintaining the project timeline, and ensuring tasks were completed effectively. This included briefing team members, assigning roles suited to individual strengths, and leading regular meetings with a strong technical focus while maintaining team engagement and morale.</p>
+        <p>In parallel, I served as Electronics Lead and was solely responsible for returning the aircraft avionics to a flyable state. This involved extensive rewiring, system troubleshooting, and configuring the Pixhawk 4 flight controller using ArduPilot software.</p>
+    </div>
+    <div class="image">
+        <img src="project-assets/uasrebuild/potrait.jpg" alt="">
+    </div>
+</section>
+
+<!-- TESTING -->
+<section class="project-split">
+    <div class="text">
+        <h2>System & Electronics</h2>
+        <p>The aircraft electrical system was rebuilt and re-commissioned around a standard UAS power and control architecture. A LiPo battery fed a power distribution board (PDB), which split power into three main branches: two outputs supplying the ESCs and motors, and a dedicated supply feeding the Pixhawk 4 power rail. The Pixhawk 4 acted as the central controller, interfacing with the radio receiver/transmitter for command input and coordinating motor outputs via the ESCs.</p>
+        <p>The primary challenge was recovering the system after the crash. Several electronic components showed impact damage and many wires/connectors were partially broken, creating intermittent faults and unreliable continuity. To restore integrity, wiring was reworked through a combination of re‑soldering damaged joints and replacing connectors where necessary, followed by systematic checks to confirm stable power delivery and consistent signal paths.</p>
+        <p>Once the hardware was physically reliable, the focus shifted to flight controller configuration. A significant amount of time was spent bringing the Pixhawk 4 to a flyable state within ArduPilot, including learning the software workflow, verifying correct system setup, and resolving configuration issues introduced by rewiring and component changes. As this was my first time using ArduPilot, the process involved a steep learning curve, but it resulted in a functioning avionics setup suitable for further ground testing and flight preparation.</p>
+    </div>
+    <div class="image">
+        <img src="project-assets/uasrebuild/wiring.jpg" alt="">
+        <img src="project-assets/uasrebuild/ardupilot.png" alt="">
+    </div>
+</section>
+
+<!-- RESULTS -->
+<section class="project-section centered">
+    <h2>Results & Learning Outcomes</h2>
+    <p>This project provided extensive hands-on experience with UAS electronics, including system rewiring and in-depth configuration of a Pixhawk 4 flight controller using ArduPilot. It also developed my ability to lead an engineering workflow, ensuring tasks were planned, executed, and completed within constraints. Overall, the project was both technically valuable and highly engaging, strengthening my confidence in avionics integration and team leadership.</p>
+</section>
+
+<!-- GALLERY -->
+<section class="project-gallery">
+    <h2>Project Gallery</h2>
+    <div class="gallery-grid">
+        <img src="project-assets/uasrebuild/assembled.jpg" alt="">
+        <img src="project-assets/uasrebuild/onthefloor.jpg" alt="">
+        <img src="project-assets/uasrebuild/wings.jpg" alt="">
+    </div>
+</section>
+
+</body>
+</html>

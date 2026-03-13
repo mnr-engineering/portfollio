@@ -1,0 +1,186 @@
+/* ===== Body & General ===== */
+body {
+    background-color: #3f4040;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #708090;
+    width: 100%;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    flex-wrap: wrap; 
+}
+
+.header-left {
+    flex: 1; 
+}
+
+.title {
+    flex: 0 0 auto; 
+    text-align: center;
+    margin: 0;
+}
+
+.title a {
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.nav-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-right: 20px;
+    flex: 1; 
+}
+
+.nav-container a {
+    text-decoration: none;
+    color: aliceblue;
+    padding: 10px;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    transition: transform 0.25s ease, text-underline-offset 0.25s ease;
+}
+
+.nav-container a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transform: scale(1.1);
+}
+
+
+/* ===== Contact Hero ===== */
+.contact-hero-wrapper {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+}
+
+.contact-banner {
+    background-image: url("/assets/aboutmebanner.JPEG");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    filter: brightness(0.35);
+}
+
+.contact-hero {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.contact-hero-content h1 {
+    font-family: "League Gothic", sans-serif;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    color: #5ea8e4;
+}
+
+.contact-hero-content p {
+    color: #d7e9ff;
+    max-width: 600px;
+    margin: auto;
+    font-size: 1.3rem;
+}
+
+/* ===== Contact Section ===== */
+/* ===== Contact Section ===== */
+.contact-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.contact-container h1 {
+    font-family: "League Gothic", sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: #4a81ad;
+}
+
+.contact-container p {
+    color: #cfd8e3;
+    margin-bottom: 40px;
+    font-size: 1.3rem;
+}
+
+/* Buttons Layout */
+.contact-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Contact Buttons */
+.contact-btn {
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #5ea8e4, #4a81ad);
+    color: white;
+    font-size: 1.1rem;
+    width: 260px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Location */
+.contact-location {
+    margin-top: 15px;
+    color: #9fb6cc;
+    font-size: 1rem;
+}
+
+/* ===== Form ===== */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contact-banner {
+        background-attachment: scroll;
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Title | MNR Engineering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projecttemplate.css">
+</head>
+<body>
+
+<header>
+    <div class="header-left"></div>
+    <h1 class="title"><a href="/index.html">MNR Engineering</a></h1>
+    <div class="nav-container">
+        <a href="/aboutme.html">About Me</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/cv.html">CV</a>
+        <a href="/contact.html">Contact</a>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="project-hero">
+    <img src="project-assets/ticketscript/hero2.png" alt="Project image">
+    <div class="hero-text">
+        <h1>Ticket Automation Script</h1>
+        <p>Custom python script built to create and distribute tickets</p>
+    </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="project-section centered">
+    <h2>Overview</h2>
+    <p>I developed an end‑to‑end digital ticket workflow that generates unique, personalised tickets for each attendee and supports simple distribution. The goal was to remove repetitive admin tasks (manual formatting, printing, packaging, posting) while maintaining a professional, branded ticket output. The solution was designed to be low‑cost, repeatable for future events, and easy for non‑technical staff to use once set up.</p>
+</section>
+
+<!-- DESIGN SECTION -->
+<section class="project-split">
+    <div class="text">
+        <h2>Project Context</h2>
+        <p>My workplace regularly hosts events, but the ticketing process relied on generic printed tickets and manual admin work to create, package, and post them. This approach took days of effort and limited personalisation. I proposed switching to digital tickets to reduce admin time and improve attendee experience. After researching existing ticketing platforms, I found that full personalisation at scale was costly, so I built a custom solution in Python.</p>
+    </div>
+    <div class="image">
+        <img src="project-assets/ticketscript/terminal.jpg" alt="">
+    </div>
+</section>
+
+<!-- BUILD SECTION -->
+<section class="project-split reverse">
+    <div class="text">
+        <h2>System Architecture</h2>
+        <p>Input: Read a CSV of attendee data (name, email, ticket qty, barcode string).</p>
+        <p>Generate: For each attendee, create barcode + text overlay, then merge onto a PDF ticket template.</p>
+        <p>Send: Email tickets via SMTP in batches, refreshing the SMTP session every 10 emails to prevent timeouts.</p>
+    </div>
+    <div class="image">
+        <img src="project-assets/ticketscript/flowdiagram.png" alt="">
+    </div>
+</section>
+
+<!-- TESTING -->
+<section class="project-split">
+    <div class="text">
+        <h2>Implementation</h2>
+        <p>During implementation, the main challenge was SMTP reliability. My first approach opened the SMTP connection once at the start, sent all emails, then closed it at the end. This repeatedly failed because the server timed out mid‑batch, leaving the remaining tickets unsent. I then switched to opening/closing the connection per attendee, which improved reliability but significantly increased runtime.</p>
+        <p>To balance speed and stability, I implemented a session refresh strategy: the SMTP connection is reused but re-authenticated every 10 emails, preventing timeouts without the overhead of reconnecting for every recipient.</p>
+        <p>A second issue was recoverability. If the script failed partway through, there was no clear record of progress. To solve this, the script writes back to a tracking CSV every 5 attendees, marking tickets as sent so the process can resume without duplication.</p>
+        <p>Finally, I improved robustness by preventing single-recipient failures from stopping the entire run. I implemented a try/except workflow so failed sends are logged and the script continues processing the remaining attendees, enabling reliable batch completion and easier fault investigation.</p>
+    </div>
+    <div class="image">
+        <img src="project-assets/ticketscript/ticket.png" alt="">
+    </div>
+</section>
+
+<!-- CHALLENGES -->
+<section class="project-section centered">
+    <h2>Deployment & Impact</h2>
+    <p>This solution replaced a manual, print‑and‑post ticketing workflow with a fully automated digital system. Previously, ticket distribution involved ordering printed tickets, waiting for production and delivery, packaging envelopes, labelling, posting, and waiting for arrival, resulting in an end‑to‑end turnaround of around two weeks. The automated workflow reduced this entire process to approximately three minutes of execution time, completely eliminating reliance on external printing and postal services.</p>
+    <p>The change delivered a dramatic efficiency improvement, reducing turnaround time by roughly 99.99% and increasing delivery speed by over 6,700×. In addition to saving time, the system significantly improved the professional quality of tickets through consistent branding and full personalisation. On the day of events, operations were smoother, with automated check‑in enabled through QR or barcode scanning rather than manual name checking.</p>
+    <p>The digital approach also removed scalability limits inherent in manual distribution, allowing hundreds or thousands of tickets to be generated and sent with no additional administrative overhead. The codebase is fully reusable, enabling the same workflow to be deployed for future events with minimal setup.</p>
+</section>
+
+<!-- RESULTS -->
+<section class="project-section centered">
+    <h2>Improvements</h2>
+    <p>A key improvement would be to add a simple user interface so the tool no longer relies on hard‑coded values or a developer editing the script. A lightweight UI (desktop or web) could guide staff through selecting the event template, importing the attendee CSV, previewing ticket output, and triggering distribution with clear progress and error reporting. This would make the workflow usable by non‑technical users with minimal training, reduce the risk of input mistakes, and remove the dependency on someone with Python/HTML knowledge. It would also support better governance (standardised templates, controlled settings, and consistent usage across the organisation).</p>
+</section>
+
+</body>
+</html>

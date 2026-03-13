@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wind Tunnel | MNR Engineering</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="projecttemplate.css">
+</head>
+<body>
+
+<header>
+    <div class="header-left"></div>
+    <h1 class="title"><a href="/index.html">MNR Engineering</a></h1>
+    <div class="nav-container">
+        <a href="/aboutme.html">About Me</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/cv.html">CV</a>
+        <a href="/contact.html">Contact</a>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="project-hero">
+    <img src="project-assets/windtunnel/hero.jpg" alt="Project image">
+    <div class="hero-text">
+        <h1>Wind Tunnel</h1>
+        <p>Built to see the characteristics of airflow over small scale cars.</p>
+    </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="project-section centered">
+    <h2>Overview</h2>
+    <p>Design and construction of a small-scale wind tunnel
+         to investigate wake formation differences between Formula 1 and road car geometries using Hot Wheels models..</p>
+</section>
+
+<!-- DESIGN SECTION -->
+<section class="project-split">
+    <div class="text">
+        <h2>Design & Development</h2>
+        <p>The design process began with research into wind tunnel fundamentals, focusing on how geometry influences airflow quality. Key concepts studied included plenums, honeycomb flow straighteners, and diffuser behaviour, and their role in reducing turbulence and stabilising flow.</p>
+        <p>Based on this, the tunnel was designed with the following layout: inlet mesh, upstream plenum, honeycomb straightener, test section, downstream honeycomb, exhaust plenum, and fan. This configuration was selected to progressively condition the airflow while minimising fan-induced disturbances.</p>
+        <p>Key design decisions included increasing the exhaust plenum volume to allow airflow expansion and pressure recovery, improving flow consistency through the test section. Honeycomb straighteners were placed on both sides of the test section to reduce swirl and lateral velocity components, improving wake clarity.</p>
+        <p>All components were designed in SolidWorks using a modular approach. The tunnel was split into printable sub‑assemblies to suit my personal 3D printer and allow rapid iteration. Additive manufacturing constraints were considered throughout. Practical features included a removable access hatch for easy model insertion and a dedicated electronics enclosure to house controls and wiring.</p>
+    </div>
+    <div class="image">
+        <img src="project-assets/windtunnel/cadmodel.png" alt="">
+        <img src="project-assets/windtunnel/interior.png" alt="">
+        <img src="project-assets/windtunnel/electronicshousing.png" alt="">
+    </div>
+</section>
+
+<!-- BUILD SECTION -->
+<section class="project-split reverse">
+    <div class="text">
+        <h2>Build Process</h2>
+        <p>All mechanical components were 3D printed on a Creality Ender 3, with a total print time of approximately two days. Once printing was complete, the tunnel was assembled and aligned. Due to limited experience with fastener design at the time, the structure was bonded using superglue, which provided sufficient rigidity for testing while simplifying assembly. The fan was fixed in place, with care taken to ensure wiring remained accessible for maintenance and modification. LED strips were installed within the test section to improve flow visualisation.</p>
+        <p>The electronics system was then developed. A simple control architecture was defined to operate the fan, internal lighting, and fog generation system. A system layout and wiring diagram were created before assembly. All electronics were soldered by hand and powered via a central power distribution board. The fan was controlled using a PWM motor controller, while the LED lighting was operated through a basic on/off switch. Due to high current demand, the fog machine was powered separately using batteries and an external switch.</p>
+        <p>This stage provided hands-on experience with soldering, wiring layout, and safe electronics integration.</p>
+    </div>
+    <div class="image">
+        <img src="project-assets/windtunnel/3dprinted.jpg" alt="">
+        <img src="project-assets/windtunnel/electronicsdiagram.jpg" alt="">
+        <img src="project-assets/windtunnel/electronics.jpg" alt="">
+    </div>
+</section>
+
+<!-- TESTING -->
+<section class="project-split">
+    <div class="text">
+        <h2>Testing & Iteration</h2>
+        <p>Testing focused on qualitative comparison of wake behaviour between road car and Formula 1 geometries. A road car model, specifically a BMW X-series, was tested first due to its large, bluff body shape, allowing wake formation to be clearly observed. During testing, distinct vortices were visible behind the rear bumper, indicating a large, unsteady wake region.</p>
+        <p>An F1 model, based on McLaren's 2026 car, was then tested under similar conditions. The wake observed was significantly smaller and more coherent than that of the road car. Flow behaviour suggested air being directed upward behind the vehicle, consistent with aerodynamic features designed to generate downforce.</p>
+        <p>While the tests were not quantitatively accurate, they provided clear comparative results and demonstrated real aerodynamic principles at small scale.</p>
+    </div>
+    <div class="image">
+        <img src="project-assets/windtunnel/x4tunnel.png" alt="">
+        <img src="project-assets/windtunnel/f1tunnel.jpg" alt="">
+        <img src="project-assets/windtunnel/m4tunnel.gif" alt="">
+    </div>
+</section>
+
+<!-- CHALLENGES -->
+<section class="project-section centered">
+    <h2>Challenges & Engineering Decisions</h2>
+    <p>The project successfully demonstrated qualitative aerodynamic differences between vehicle geometries; however, several limitations were identified. The tunnel dimensions were not optimised, with insufficient convergence into the test section, resulting in a low pressure differential and poor flow quality. This limited the effectiveness of flow conditioning and reduced wake clarity.</p>
+    <p>The smoke visualisation system was another key issue. A glycerin-based fog machine was selected over water mist to avoid moisture inside the tunnel and produce denser flow streaks. In practice, the smoke was too thick, difficult to straighten, and quickly filled the room, limiting test duration and reducing visibility.</p>
+    <p>Assembly decisions also affected performance. Bonding the structure using superglue led to small gaps between sections, increasing leakage and causing fogging of the acrylic panels due to adhesive vapours. Additionally, the lack of mechanical fasteners removed the ability to reconfigure or replace individual sections.</p>
+    <p>If repeated, the design would incorporate a stronger contraction ratio into the test section, water-vapour-based flow visualisation, and a fully fastened modular assembly to improve flow quality, serviceability, and experimental control.</p>
+</section>
+
+<!-- RESULTS -->
+<section class="project-section centered">
+    <h2>Outcome</h2>
+    <p>Overall, the project was a success and met its primary learning objectives. It provided hands-on experience in taking an idea from concept through design, fabrication, and testing, resulting in a complete physical system. Key skills developed included CAD assembly modelling, designing for 3D printing, soldering and basic electronics integration, and a stronger practical understanding of aerodynamic principles through experimentation.</p>
+</section>
+
+<!-- GALLERY -->
+<section class="project-gallery">
+    <h2>Project Gallery</h2>
+    <div class="gallery-grid">
+        <img src="project-assets/windtunnel/image1.jpg" alt="">
+        <img src="project-assets/windtunnel/image2.png" alt="">
+        <img src="project-assets/windtunnel/image3.png" alt="">
+        <img src="project-assets/windtunnel/image4.png" alt="">
+        <img src="project-assets/windtunnel/image5.png" alt="">
+        <img src="project-assets/windtunnel/image6.png" alt="">
+        <img src="project-assets/windtunnel/image7.png" alt="">
+        <img src="project-assets/windtunnel/image8.png" alt="">
+        <img src="project-assets/windtunnel/image9.png" alt="">
+        <img src="project-assets/windtunnel/image10.png" alt="">
+    </div>
+</section>
+
+</body>
+</html>

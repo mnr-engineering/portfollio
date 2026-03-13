@@ -1,0 +1,260 @@
+/* ===== Body & General ===== */
+body {
+    background-color: #3f4040;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* ===== Header ===== */
+header {
+    background-color: #708090;
+    width: 100%;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    flex-wrap: wrap; 
+}
+
+.header-left {
+    flex: 1; 
+}
+
+.title {
+    flex: 0 0 auto; 
+    text-align: center;
+    margin: 0;
+}
+
+.title a {
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.nav-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-right: 20px;
+    flex: 1; 
+}
+
+.nav-container a {
+    text-decoration: none;
+    color: aliceblue;
+    padding: 10px;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    transition: transform 0.25s ease, text-underline-offset 0.25s ease;
+}
+
+.nav-container a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transform: scale(1.1);
+}
+
+/* ===== Banner ===== */
+.banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===== CV Container ===== */
+.cv-container {
+    text-align: center;
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.cv-container h1 {
+    color: #4a81ad;
+    font-family: "League Gothic", sans-serif;
+    font-weight: 200;
+    font-size: clamp(2rem, 5vw, 5rem);
+    margin-bottom: 20px;
+}
+
+.cv-container div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+/* ===== Buttons ===== */
+.btn {
+    --color: #1a2833;
+    --color2: rgb(10, 25, 30);
+    padding: 0.8em 1.75em;
+    background-color: transparent;
+    border-radius: 6px;
+    border: 0.3px solid var(--color);
+    transition: 0.5s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    text-transform: uppercase;
+    color: var(--color);
+}
+
+.btn::after, .btn::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform: skew(90deg) translate(-50%, -50%);
+    position: absolute;
+    inset: 50%;
+    left: 25%;
+    z-index: -1;
+    transition: .5s ease-out;
+    background-color: var(--color);
+}
+
+.btn::before {
+    top: -50%;
+    left: -25%;
+    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::before {
+    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+}
+
+.btn:hover::after {
+    transform: skew(45deg) translate(-50%, -50%);
+}
+
+.btn:hover {
+    color: var(--color2);
+}
+
+.btn:active {
+    filter: brightness(.7);
+    transform: scale(.98);
+}
+
+.cv-container a {
+    text-decoration: none;
+    color: #5ea8e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== HR ===== */
+hr {
+    border-top: 2px double #708090;
+    border-bottom: none;
+    border-radius: 6px;
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* ===== Featured Projects ===== */
+.featured-projects h1 {
+    text-align: center;
+    padding: 2% 0;
+    color: #4a81ad;
+    font-family: "League Gothic", sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 200;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .nav-container {
+        justify-content: center;
+    }
+
+    .title a {
+        font-size: clamp(1.2rem, 6vw, 2rem);
+    }
+
+    .cv-container h1 {
+        font-size: clamp(1.5rem, 6vw, 3rem);
+    }
+
+    .btn {
+        font-size: clamp(0.8rem, 2.5vw, 1rem);
+        padding: 0.6em 1.2em;
+    }
+
+    .featured-projects h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+}
+
+/* ===== Project Cards Section ===== */
+.project-cards {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Individual Card */
+.projectcard {
+    background: #222222;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover lift effect */
+.projectcard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Image */
+.projectcards img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Text content */
+.projectcard h2 {
+    color: #5ea8e4;
+    font-family: "League Gothic", sans-serif;
+    font-size: 2rem;
+    margin: 15px 15px 5px 15px;
+}
+
+.projectcard p {
+    color: #ddd;
+    font-size: 1rem;
+    margin: 0 15px 20px 15px;
+    line-height: 1.5;
+}
+
+/* Optional "Read More" button inside card */
+.projectcard a {
+    margin: 0 15px 20px 15px;
+    text-decoration: none;
+    color: #5ea8e4;
+    font-weight: bold;
+}
